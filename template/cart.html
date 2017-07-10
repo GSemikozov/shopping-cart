@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="btn-group" role="group" style="margin-top: 50px">
+        <a href="#/" class="btn btn-default">Back</a>
+    </div>
+    <h1>CART-SHOW</h1>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="c in cart">
+            <h4>{{c.name}} |                <span style="color:blue">quantity: {{c.quantity}} </span>
+                | {{c.price*c.quantity | currency}}</h4>
+            <button class="btn" ng-click="increaseItemAmount(c)">
+                +
+            </button>
+            <button class="btn" ng-click="decreaseItemAmount(c)">
+                -
+            </button>
+            <input class="btn btn-danger" type="button" ng-click="removeItemCart(c)" value="Remove" />
+        </li>
+    </ul>
+    <div>Total : {{total | currency}}</div>
+</div>
